@@ -16,7 +16,6 @@ const Form = () => {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
   const vacancies = useSelector((state) => state.vacancies);
-  console.log(vacancies);
 
   useEffect(() => {
     if (id === "new") {
@@ -31,7 +30,7 @@ const Form = () => {
       setDate(date);
       setDesc(desc);
     }
-  }, [id]);
+  }, [id, vacancies]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
